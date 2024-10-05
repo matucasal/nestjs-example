@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AppendDTO } from './dtos/append.request.dto';
 
 describe('AppController', () => {
   let controller: AppController;
@@ -14,6 +15,7 @@ describe('AppController', () => {
           provide: AppService,
           useValue: {
             reverse: jest.fn(),
+            append: jest.fn(),
           },
         },
       ],
@@ -49,5 +51,17 @@ describe('AppController', () => {
       error: errorMessage,
     });
     expect(service.reverse).toHaveBeenCalledWith('Hello World');
+  });
+
+  it('should append string successfully', () => {
+    const mockAppendedArray = ['0', '1', '2', '3', '4', '5', '6'];
+    //jest.spyOn(service, 'append').mockResolvedValue(mockAppendedArray);
+    service.append = jest.fn().mockReturnValue(mockAppendedArray);
+
+    const params: AppendDTO = { start: '0', end: '6' };
+    const result = controller.append(params);
+
+    expect(result).toBe(mockAppendedArray);
+    expect(service.append).toHaveBeenCalledWith(params);
   });
 });

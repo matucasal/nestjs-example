@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppService } from './app.service';
-import { CountriesModule } from './modules/countries/countries.module';
+import { CountriesModule } from '../countries/countries.module';
 import { AppController } from './app.controller';
 
 @Module({
