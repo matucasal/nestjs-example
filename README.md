@@ -17,6 +17,8 @@ SIMPLE_ARRAY=1,2,3
 
 ## Running the app
 
+The app run by default in port 3000
+
 ```bash
 # watch mode
 $ npm run start:dev
@@ -44,3 +46,22 @@ GET /countries?order=asc&filter=and
 POST /reverse/:string
 
 POST /append?end=fin&start=inicio
+
+
+## Run the project with Docker
+
+Use the docker compose file
+
+```bash
+docker compose up
+```
+
+Or build the image and run the container
+
+```bash
+docker build -t nest-app .
+
+docker run -p 3000:3000 nest-app
+```
+
+
