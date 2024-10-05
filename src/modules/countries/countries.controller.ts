@@ -9,7 +9,7 @@ export class CountriesController {
   constructor(private readonly countriesService: CountriesService) {}
 
   @Get('')
-  @ApiOkResponse({ description: 'Application created successfully' })
+  @ApiOkResponse({ description: 'Get all the countries' })
   @ApiQuery({
     name: 'filter',
     required: false,

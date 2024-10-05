@@ -26,3 +26,9 @@ Run the app and go to
 http://localhost:3000/swagger
 
 There you can test the API with Swagger UI.
+
+## Endpoints
+
+GET /countries
+
+POST /reverse/:string
