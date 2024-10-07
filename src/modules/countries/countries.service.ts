@@ -29,14 +29,14 @@ export class CountriesService {
             map((response: AxiosResponse<{ record: CountryPayloadDTO[] }>) => {
               let countriesList = response.data?.record || [];
 
-              // Apply filtering logic
+              // Filtering logic if exists param
               if (filter) {
                 countriesList = countriesList.filter((country) =>
                   country.country.toLowerCase().includes(filter.toLowerCase()),
                 );
               }
 
-              // Apply ordering logic (sort by vat)
+              // Ordering logic if exists param
               if (order === 'asc') {
                 countriesList = countriesList.sort((a, b) => a.vat - b.vat);
               } else if (order === 'desc') {

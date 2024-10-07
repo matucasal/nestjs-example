@@ -33,11 +33,11 @@ $ npm run test
 
 ## Test the project with Swagger
 
-Run the app and go to
+Run the app and go to:
 
 http://localhost:3000/swagger
 
-There you can test the API with Swagger UI.
+There you can test the API endpoints with Swagger UI.
 
 ## Endpoints
 

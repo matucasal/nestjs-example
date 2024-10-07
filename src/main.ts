@@ -10,7 +10,6 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('root')
     .addBearerAuth()
-    .addApiKey({ type: 'apiKey', name: 'api_key', in: 'header' }, 'api_key')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('swagger', app, document);
